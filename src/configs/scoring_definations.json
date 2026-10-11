@@ -1,0 +1,70 @@
+{
+    "version": 1,
+    "categories": {
+        "personality_values": "Personality & Values",
+        "lifestyle_daily_life": "Lifestyle & Daily Life",
+        "career_ambition": "Career & Ambition",
+        "finance": "Finance",
+        "family_parents": "Family & Parents",
+        "marriage_expectations": "Marriage Expectations",
+        "home_housing_location": "Home, Housing & Location",
+        "communication_conflict": "Communication & Conflict",
+        "future_life_goals": "Future & Life Goals"
+    },
+    "scoring": {
+        "importance": {
+            "not_matter": {
+                "label": "Doesn't matters to me",
+                "emoji": "🟢",
+                "weight": 1
+            },
+            "matters_to_me": {
+                "label": "Matters to me",
+                "emoji": "🟡",
+                "weight": 2
+            },
+            "matters_a_lot": {
+                "label": "Matters to me a lot",
+                "emoji": "🔴",
+                "weight": 3
+            }
+        },
+        "compatibility": {
+            "very_compatible": {
+                "label": "Very Compatible",
+                "emoji": "💚",
+                "score": 2
+            },
+            "compatible": {
+                "label": "Compatible",
+                "emoji": "👍",
+                "score": 1
+            },
+            "need_to_explore": {
+                "label": "Need to Explore",
+                "emoji": "🤔",
+                "score": 0
+            },
+            "not_very_compatible": {
+                "label": "Not Very Compatible",
+                "emoji": "⚠️",
+                "score": -1
+            },
+            "highly_incompatible": {
+                "label": "Highly Incompatible",
+                "emoji": "🚩",
+                "score": -2
+            }
+        }
+    },
+    "questionSets": {
+        "arrangedMarriage": {
+            "name": "Arranged Marriage",
+            "questions": []
+        },
+        "casualDating": {
+            "name": "Casual Dating",
+            "questions": []
+        }
+    }
+}

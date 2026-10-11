@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "questionSets": {
+    "arrangedMarriage": {
+      "name": "Arranged Marriage Date",
+      "questions": [
+        {
+          "id": "AM_001",
+          "order": 1,
+          "category": "personality_values",
+          "question": "What kind of person are you in your everyday life? What do you think your close friends or family would say about you?",
+          "followUps": [
+            "What are some qualities you really like about yourself?",
+            "Is there anything about yourself that you're trying to improve?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_002",
+          "order": 2,
+          "category": "home_housing_location",
+          "question": "When it comes to having your own home after marriage, would you prefer buying a house or renting for some time? What would influence your decision?",
+          "followUps": [
+            "How soon would you ideally want to buy a house?",
+            "Would you be comfortable renting for several years if buying didn't make financial sense?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_003",
+          "order": 3,
+          "category": "lifestyle_daily_life",
+          "question": "What does a typical weekend look like for you? What do you usually enjoy doing in your free time?",
+          "followUps": [
+            "How much time do you usually like spending with friends or family?",
+            "Do you prefer going out or spending time at home?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_004",
+          "order": 4,
+          "category": "lifestyle_daily_life",
+          "question": "What are your thoughts on smoking and drinking? How often, if at all, do you currently do either?",
+          "followUps": [
+            "Would your habits be something you'd want to change in the future?",
+            "How would you feel if your partner had different habits from you?"
+          ],
+          "dealBreakerEnabled": true
+        }
+      ]
+    },
+    "casualDating": {
+      "name": "Casual Date",
+      "questions": []
+    },
+    "phoneCallDate": {
+      "name": "Phone Call Date",
+      "questions": []
+    }
+  }
+}
