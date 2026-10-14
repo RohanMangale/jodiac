@@ -69,6 +69,8 @@ export function addDate(dateEntry) {
       evaluatedCount: 0,
       totalQuestions: 0,
       dealBreakers: {},
+      alignedCategories: [],
+      differenceCategories: [],
     },
     test_completed: false,
   })

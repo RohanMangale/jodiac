@@ -62,6 +62,60 @@ export function getDealBreakers(evaluations) {
   return grouped
 }
 
+// Sum valid answered question points by category.
+/** @param {unknown} evaluations */
+function getCategoryPointTotals(evaluations) {
+  const safeEvaluations = Array.isArray(evaluations) ? evaluations : []
+  const categoryTotals = new Map()
+
+  for (const evaluation of safeEvaluations) {
+    if (evaluation?.skipped === true) continue
+
+    const rawPoint = evaluation?.point
+    if (rawPoint === null || rawPoint === undefined) continue
+
+    const point = Number(rawPoint)
+    if (!Number.isFinite(point)) continue
+
+    const category = String(evaluation?.category ?? '').trim()
+    if (!category) continue
+
+    categoryTotals.set(category, (categoryTotals.get(category) ?? 0) + point)
+  }
+
+  return categoryTotals
+}
+
+// Return categories whose answered weighted points sum to a positive value.
+/** @param {unknown} evaluations */
+export function getAlignedCategories(evaluations) {
+  const categoryTotals = getCategoryPointTotals(evaluations)
+  const alignedCategories = []
+
+  for (const [category, points] of categoryTotals) {
+    if (!Number.isFinite(points) || points <= 0) continue
+
+    alignedCategories.push({ category, points })
+  }
+
+  return alignedCategories
+}
+
+// Return categories whose answered weighted points sum to a negative value.
+/** @param {unknown} evaluations */
+export function getDifferenceCategories(evaluations) {
+  const categoryTotals = getCategoryPointTotals(evaluations)
+  const differenceCategories = []
+
+  for (const [category, points] of categoryTotals) {
+    if (!Number.isFinite(points) || points >= 0) continue
+
+    differenceCategories.push({ category, points })
+  }
+
+  return differenceCategories
+}
+
 // Build the shared report metrics from the saved evaluation list so the state layer stays thin.
 export function calculateReportMetrics(evaluations) {
   const safeEvaluations = Array.isArray(evaluations) ? evaluations : []
@@ -74,5 +128,7 @@ export function calculateReportMetrics(evaluations) {
     evaluatedCount,
     totalQuestions,
     dealBreakers,
+    alignedCategories: getAlignedCategories(safeEvaluations),
+    differenceCategories: getDifferenceCategories(safeEvaluations),
   }
 }

@@ -1,6 +1,9 @@
 <script>
   import ScoreCard from '../components/report_cards/ScoreCard.svelte'
   import DealBreakersCard from '../components/report_cards/DealBreakersCard.svelte'
+  import AlignedCategoriesCard from '../components/report_cards/AlignedCategoriesCard.svelte'
+  import DifferenceCategories from '../components/report_cards/DifferenceCategories.svelte'
+  import { getAlignedCategories, getDifferenceCategories } from '../lib/reportCalculation.js'
   import questionLibrary from '../lib/data/questions.json'
 
   let { dateEntry, onBack } = $props()
@@ -48,5 +51,13 @@
     />
 
     <DealBreakersCard dealBreakers={dateEntry?.report?.dealBreakers ?? {}} questionLibrary={questionLibrary} />
+
+    <AlignedCategoriesCard
+      alignedCategories={dateEntry?.report?.alignedCategories ?? getAlignedCategories(dateEntry?.evaluations)}
+    />
+
+    <DifferenceCategories
+      differenceCategories={dateEntry?.report?.differenceCategories ?? getDifferenceCategories(dateEntry?.evaluations)}
+    />
   </div>
 </main>
