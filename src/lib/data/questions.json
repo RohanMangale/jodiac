@@ -7,46 +7,376 @@
         {
           "id": "AM_001",
           "order": 1,
-          "category": "personality_values",
-          "question": "What kind of person are you in your everyday life? What do you think your close friends or family would say about you?",
+          "category": "lifestyle_daily_life",
+          "question": "What do you generally do on weekends?",
           "followUps": [
-            "What are some qualities you really like about yourself?",
-            "Is there anything about yourself that you're trying to improve?"
-          ],
-          "dealBreakerEnabled": false
-        },
-        {
-          "id": "AM_002",
-          "order": 2,
-          "category": "home_housing_location",
-          "question": "When it comes to having your own home after marriage, would you prefer buying a house or renting for some time? What would influence your decision?",
-          "followUps": [
-            "How soon would you ideally want to buy a house?",
-            "Would you be comfortable renting for several years if buying didn't make financial sense?"
+            "What do you enjoy most about your weekends?",
+            "Do you usually plan your weekends in advance or decide as you go?"
           ],
           "dealBreakerEnabled": false
         },
         {
           "id": "AM_003",
+          "order": 2,
+          "category": "lifestyle_daily_life",
+          "question": "How would you describe your typical day, from morning to evening?",
+          "followUps": [
+            "Which part of your day do you enjoy the most?",
+            "Does your usual routine leave you enough time to relax or do things for yourself?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_010",
           "order": 3,
           "category": "lifestyle_daily_life",
-          "question": "What does a typical weekend look like for you? What do you usually enjoy doing in your free time?",
+          "question": "Do you like socializing?",
           "followUps": [
-            "How much time do you usually like spending with friends or family?",
-            "Do you prefer going out or spending time at home?"
+            "Do you prefer having a small circle of close friends or knowing lots of people?",
+            "How often do you like to meet friends or socialise?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_011",
+          "order": 4,
+          "category": "lifestyle_daily_life",
+          "question": "Do you prefer going out and exploring places, or spending a quiet day at home?",
+          "followUps": [
+            "What kinds of places or activities do you most enjoy when you go out?",
+            "On a free weekend, how often would you ideally like to go out?"
           ],
           "dealBreakerEnabled": false
         },
         {
           "id": "AM_004",
-          "order": 4,
-          "category": "lifestyle_daily_life",
-          "question": "What are your thoughts on smoking and drinking? How often, if at all, do you currently do either?",
+          "order": 5,
+          "category": "personality_values",
+          "question": "Outside work, what are the things that matter most to you in your life right now?",
           "followUps": [
-            "Would your habits be something you'd want to change in the future?",
-            "How would you feel if your partner had different habits from you?"
+            "Which of those things would you most like to make more time for?",
+            "How do you usually make time for the things that matter to you?"
           ],
-          "dealBreakerEnabled": true
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_006",
+          "order": 6,
+          "category": "personality_values",
+          "question": "What kind of behaviour from other people puts you off?",
+          "followUps": [
+            "Can you give an example of a behaviour that would make it difficult for you to trust someone?",
+            "How do you usually handle it when someone behaves that way?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_008",
+          "order": 7,
+          "category": "personality_values",
+          "question": "Do you usually open up to people quickly, or does it take you time to get comfortable with them?",
+          "followUps": [
+            "What helps you feel comfortable enough to open up to someone?",
+            "Does that change once you've known someone for a while?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_009",
+          "order": 8,
+          "category": "personality_values",
+          "question": "When you have an important decision to make, do you prefer figuring it out yourself or discussing it with people close to you?",
+          "followUps": [
+            "Whose perspective do you usually find most helpful when making a big decision?",
+            "Can you think of a time when discussing a decision helped you see it differently?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_012",
+          "order": 9,
+          "category": "career_ambition",
+          "question": "Are you happy with your current career, or is there something you'd like to change or achieve?",
+          "followUps": [
+            "What would you most like to change or achieve in your career?",
+            "Is there a particular professional goal you'd like to work towards over the next few years?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_013",
+          "order": 10,
+          "category": "career_ambition",
+          "question": "How important is career growth to you compared with having a comfortable work-life balance?",
+          "followUps": [
+            "What would a good work-life balance look like for you in practice?",
+            "When work gets demanding, how do you like to manage your time outside work?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_014",
+          "order": 11,
+          "category": "career_ambition",
+          "question": "How do you imagine balancing work and family responsibilities after marriage?",
+          "followUps": [
+            "How do you think household responsibilities should be shared if both partners work?",
+            "What kind of support would you expect from your partner during a particularly busy period at work?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_015",
+          "order": 12,
+          "category": "finance",
+          "question": "What are your biggest financial priorities at this stage of your life?",
+          "followUps": [
+            "Are you generally someone who likes to save money, spend on things you enjoy, or maintain a balance between both?",
+            "Are there any major financial goals you're currently working towards?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_016",
+          "order": 13,
+          "category": "finance",
+          "question": "After marriage, how do you think a couple should manage their household expenses?",
+          "followUps": [
+            "Would you prefer to share expenses equally or contribute in proportion to each person's income?",
+            "How do you think a couple should decide who pays for which household expenses?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_017",
+          "order": 14,
+          "category": "finance",
+          "question": "Do you think married couples should combine their finances, keep them separate, or have a mix of both?",
+          "followUps": [
+            "Would you be comfortable having a shared account for household expenses alongside individual accounts?",
+            "How important is it to you that each partner maintains some financial independence?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_031",
+          "order": 15,
+          "category": "finance",
+          "question": "What would financial stability mean to you in practical terms—for example, owning a home, having savings, being debt-free, or being able to travel comfortably?",
+          "followUps": [
+            "Which of those financial goals would be your highest priority?",
+            "Would you prefer to plan and work towards those goals jointly as a couple?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_018",
+          "order": 16,
+          "category": "family_parents",
+          "question": "After marriage, how do you imagine balancing time with your own family and your partner's family?",
+          "followUps": [
+            "How often would you ideally like to visit or spend time with each side of the family?",
+            "How would you handle it if both families had important events on the same day?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_019",
+          "order": 17,
+          "category": "family_parents",
+          "question": "What are your thoughts on living with parents after marriage versus living separately?",
+          "followUps": [
+            "What factors would matter most to you when deciding whether to live together or separately?",
+            "Would your preference change if either set of parents needed more support or care in the future?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_020",
+          "order": 18,
+          "category": "family_parents",
+          "question": "Are there any family traditions or customs that are particularly important to you and that you'd want to continue after marriage?",
+          "followUps": [
+            "Are there any particular festivals or customs you'd especially want to continue?",
+            "How would you feel about adapting traditions if our families celebrated things differently?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_021",
+          "order": 19,
+          "category": "family_parents",
+          "question": "How much involvement do you think parents should have in a married couple's personal decisions?",
+          "followUps": [
+            "Which decisions do you think should be made privately by the couple?",
+            "How would you handle it if a parent strongly disagreed with a decision you made together?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_005",
+          "order": 20,
+          "category": "marriage_expectations",
+          "question": "When you think about marriage, what would you hope everyday life with your partner would be like?",
+          "followUps": [
+            "What small everyday things would help you feel happy and connected with your partner?",
+            "How would you ideally like to spend time together on a normal weekday?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_022",
+          "order": 21,
+          "category": "marriage_expectations",
+          "question": "What are the most important things you're looking for in a life partner?",
+          "followUps": [
+            "Which of those qualities matter the most to you?",
+            "Are there any expectations you think are especially important to discuss before marriage?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_024",
+          "order": 22,
+          "category": "marriage_expectations",
+          "question": "How important is it for you to have your own personal space and independence after marriage?",
+          "followUps": [
+            "What does having personal space look like for you in everyday life?",
+            "How would you balance time together with individual hobbies or friendships?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_025",
+          "order": 23,
+          "category": "home_housing_location",
+          "question": "How important is it for you to live close to your parents and family after marriage?",
+          "followUps": [
+            "What distance or travel time from your family would feel comfortable to you?",
+            "Would you want to live close to both families, or would practical factors make one location more suitable?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_026",
+          "order": 24,
+          "category": "home_housing_location",
+          "question": "Would you prefer buying a home as soon as it's financially practical, or are you comfortable renting for a few years?",
+          "followUps": [
+            "What would make you feel ready to buy a home?",
+            "When choosing where to live, how would you weigh location against the financial flexibility of renting?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_023",
+          "order": 25,
+          "category": "communication_conflict",
+          "question": "What things do you think a husband and wife should always be able to discuss openly with each other?",
+          "followUps": [
+            "Are there topics that couples often find difficult to discuss but should still be able to talk about?",
+            "How would you bring up a topic if you were worried it might lead to disagreement?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_027",
+          "order": 26,
+          "category": "communication_conflict",
+          "question": "If something is bothering you in a relationship, do you usually bring it up immediately or take some time to process it first?",
+          "followUps": [
+            "What helps you process your feelings before having that conversation?",
+            "How would you let your partner know that you need some time before discussing an issue?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_028",
+          "order": 27,
+          "category": "communication_conflict",
+          "question": "If you and your partner strongly disagree about something, how would you prefer to resolve it?",
+          "followUps": [
+            "What helps keep a disagreement respectful when both people feel strongly?",
+            "If neither person changes their mind, how do you think a couple should decide what to do?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_007",
+          "order": 28,
+          "category": "future_life_goals",
+          "question": "When you think about your future, what are some things you'd really like to have in your life?",
+          "followUps": [
+            "Which of those things feels most important to you right now?",
+            "Is there anything you'd particularly like to experience or accomplish in the next few years?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_029",
+          "order": 29,
+          "category": "future_life_goals",
+          "question": "What kind of lifestyle would you ideally like to have in the future—more focused on career growth, family time, travel, financial freedom, or a mix of these?",
+          "followUps": [
+            "What would an ordinary week look like in that ideal lifestyle?",
+            "Which part of that lifestyle would you prioritise first?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_030",
+          "order": 30,
+          "category": "future_life_goals",
+          "question": "How would you feel if our priorities changed over time—for example, if one of us wanted to change careers, start a business, or pursue further education?",
+          "followUps": [
+            "How would you decide together whether the change was worth the financial or practical risk?",
+            "What support would you hope to receive from your partner during that transition?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_002",
+          "order": 31,
+          "category": "background_upbringing",
+          "question": "What's your heritage? Were you born here and did you grow up here?",
+          "followUps": [
+            "What do you like most about the place where you grew up?",
+            "Has the place you grew up shaped any of your interests, traditions, or lifestyle?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_032",
+          "order": 32,
+          "category": "religion_faith",
+          "question": "How important are religious or spiritual beliefs in your life?",
+          "followUps": [
+            "Do your beliefs influence your everyday decisions or routines?",
+            "Have your beliefs or practices changed as you've grown older?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_033",
+          "order": 33,
+          "category": "religion_faith",
+          "question": "What role would you like religion or faith to play in your married life?",
+          "followUps": [
+            "Are there any religious practices you'd want to continue or share with your partner after marriage?",
+            "Would you want faith to guide major family decisions, or would you see it more as a personal matter?"
+          ],
+          "dealBreakerEnabled": false
+        },
+        {
+          "id": "AM_034",
+          "order": 34,
+          "category": "religion_faith",
+          "question": "Would you expect your partner to follow the same religious practices as you, or are you comfortable with differences?",
+          "followUps": [
+            "Are there any particular practices you'd hope your partner would participate in?",
+            "How would you approach a difference in how often each partner practises their faith?"
+          ],
+          "dealBreakerEnabled": false
         }
       ]
     },

@@ -31,7 +31,8 @@
   let validationErrors = $state([])
   let transitionPhase = $state('idle')
   let pendingIndex = $state(null)
-  let questionCardElement
+  let showQuestionOverview = $state(false)
+  let questionCardElement = $state(null)
 
   const orderedQuestions = $derived(
     (() => {
@@ -43,8 +44,49 @@
 
   const currentQuestion = $derived(orderedQuestions[currentIndex] ?? null)
   const currentResponse = $derived(
-    currentQuestion ? (responses[currentQuestion.id] ?? { importance: null, compatibility: null, isDealBreaker: null, note: '' }) : { importance: null, compatibility: null, isDealBreaker: null, note: '' },
+    currentQuestion ? (responses[currentQuestion.id] ?? { importance: null, compatibility: null, isDealBreaker: false, note: '' }) : { importance: null, compatibility: null, isDealBreaker: false, note: '' },
   )
+
+  const categoryOrder = {
+    lifestyle_daily_life: 0,
+    personality_values: 1,
+    career_ambition: 2,
+    finance: 3,
+    family_parents: 4,
+    marriage_expectations: 5,
+    home_housing_location: 6,
+    communication_conflict: 7,
+    future_life_goals: 8,
+    background_upbringing: 9,
+    religion_faith: 10,
+  }
+
+  const questionOverview = $derived(
+    (() => {
+      const groups = new Map()
+
+      for (const question of orderedQuestions) {
+        const category = question.category ?? 'uncategorized'
+        if (!groups.has(category)) {
+          groups.set(category, [])
+        }
+        groups.get(category).push(question)
+      }
+
+      return [...groups.entries()].sort(([leftCategory], [rightCategory]) => {
+        return (categoryOrder[leftCategory] ?? 99) - (categoryOrder[rightCategory] ?? 99)
+      })
+    })(),
+  )
+
+  function humanizeCategory(category) {
+    const mapped = scoringDefinitions.categories?.[category] ?? null
+    if (mapped) return mapped
+
+    return String(category || 'Uncategorized')
+      .replace(/[_-]+/g, ' ')
+      .replace(/\b\w/g, (match) => match.toUpperCase())
+  }
 
   const progressValue = $derived(totalQuestions === 0 ? 0 : ((currentIndex + 1) / totalQuestions) * 100)
 
@@ -71,7 +113,7 @@
     return {
       importance,
       compatibility,
-      isDealBreaker: evaluation.is_deal_breaker ?? null,
+      isDealBreaker: evaluation.is_deal_breaker ?? false,
       note: evaluation.notes ?? '',
       skipped: Boolean(evaluation.skipped ?? false),
     }
@@ -91,7 +133,7 @@
       category: currentQuestion.category,
       importance: scoringDefinitions.scoring.importance[updatedResponse.importance]?.weight ?? null,
       compatibility: scoringDefinitions.scoring.compatibility[updatedResponse.compatibility]?.score ?? null,
-      is_deal_breaker: updatedResponse.isDealBreaker,
+      is_deal_breaker: updatedResponse.isDealBreaker ?? false,
       notes: updatedResponse.note ?? '',
       skipped: false,
       point: scoringDefinitions.scoring.importance[updatedResponse.importance]?.weight * scoringDefinitions.scoring.compatibility[updatedResponse.compatibility]?.score ?? null,
@@ -160,7 +202,7 @@
       {
         label: 'Is this a deal-breaker for you?',
         target: 'deal-breaker-section',
-        missing: currentResponse.isDealBreaker === null,
+        missing: currentResponse.isDealBreaker === undefined || currentResponse.isDealBreaker === null,
       },
     ].filter((field) => field.missing)
 
@@ -246,6 +288,16 @@
       </button>
 
       <div class="questionnaire-counter">Question {Math.min(currentIndex + 1, totalQuestions || 1)} of {totalQuestions || 1}</div>
+
+      <button
+        class="button questionnaire-see-all"
+        type="button"
+        aria-label="Show all questions by category"
+        onclick={() => (showQuestionOverview = true)}
+      >
+        <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+        <span>All questions</span>
+      </button>
     </header>
 
     <div class="questionnaire-progress-wrap">
@@ -305,6 +357,49 @@
       </div>
     {/if}
   </div>
+
+  {#if showQuestionOverview}
+    <div class="modal is-active question-overview-modal" aria-modal="true" role="dialog" aria-labelledby="question-overview-title">
+      <button class="modal-background" type="button" aria-label="Close questions overview" onclick={() => (showQuestionOverview = false)}></button>
+
+      <div class="modal-card question-overview-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title" id="question-overview-title">
+            <span class="icon is-small mr-2"><i class="fa-solid fa-list-ul" aria-hidden="true"></i></span>
+            All questions
+          </p>
+          <button class="delete" type="button" aria-label="Close questions overview" onclick={() => (showQuestionOverview = false)}></button>
+        </header>
+
+        <section class="modal-card-body question-overview-body">
+          {#each questionOverview as [category, questions] (category)}
+            <div class="box category-overview-box">
+              <div class="category-overview-header">
+                <span class="tag is-jodiac is-light category-tag">{humanizeCategory(category)}</span>
+                <span class="has-text-grey is-size-7">{questions.length} questions</span>
+              </div>
+
+              <ol class="question-overview-list">
+                {#each questions as question (question.id)}
+                  <li class="question-overview-item">
+                    <span class="question-overview-number">{question.order}</span>
+                    <p>{question.question}</p>
+                  </li>
+                {/each}
+              </ol>
+            </div>
+          {/each}
+        </section>
+
+        <footer class="modal-card-foot is-justify-content-flex-end">
+          <button class="button is-jodiac" type="button" onclick={() => (showQuestionOverview = false)}>
+            <i class="fa-solid fa-check" aria-hidden="true"></i>
+            <span>Close</span>
+          </button>
+        </footer>
+      </div>
+    </div>
+  {/if}
 
   <ConfirmationDialog
     open={skipConfirmOpen}

@@ -2,7 +2,7 @@
   let {
     question,
     dateEntry,
-    response = { importance: null, compatibility: null, isDealBreaker: null, note: '' },
+    response = { importance: null, compatibility: null, isDealBreaker: false, note: '' },
     onResponseChange,
     profile,
   } = $props()
